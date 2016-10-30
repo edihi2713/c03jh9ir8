@@ -1,27 +1,36 @@
-<table>
-  <thead>
-    <th>Name</th>
-    <th>Bio</th>
-    <th>Birth_Date</th>
-    <th>Birth_Place</th>
-    <th>Picture</th>
-    <th>Death_date</th>
-    <th>Death_place</th>
-  </thead>
-  <tbody>
-    <% @actors.each do |actor| %>
-      <tr>
-        <td><%= actor.name %></td>
-        <td><%= actor.bio %></td>
-        <td><%= actor.birth_date %></td>
-        <td><%= actor.birth_place %></td>
-        <td><%= image_tag actor.image_url %></td>
-         <% if actor.alive == false %>
-            <td><%= actor.death_date %></td>
-            <td><%= actor.death_place %></td>
-         <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">Crear Actor</h1>
+      <table class="table table-bordered">
+        <thead>
+          <th>Name</th>
+          <th>Bio</th>
+          <th>Birth_Date</th>
+          <th>Birth_Place</th>
+          <th>Picture</th>
+          <th>Death_date</th>
+          <th>Death_place</th>
+        </thead>
+        <tbody>
+          <% @actors.each do |actor| %>
+            <tr>
+              <td><%= actor.name %></td>
+              <td><%= actor.bio %></td>
+              <td><%= actor.birth_date %></td>
+              <td><%= actor.birth_place %></td>
+              <td><%= image_tag actor.image_url %></td>
+               <% if actor.alive == false %>
+                  <td><%= actor.death_date %></td>
+                  <td><%= actor.death_place %></td>
+               <% end %>
+            </tr>
+          <% end %>
+          <%= link_to 'Crear Actor', new_actor_path, class: 'btn btn-success', id: 'boton' %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 

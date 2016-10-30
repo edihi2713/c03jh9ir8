@@ -1,0 +1,53 @@
+<div class="div container">
+	 <div class="row">
+	    <div class="col-md-4 col-md-offset-4">
+	    	<h1 class="text-center">Crear Actor</h1>
+			<%= form_for @actor do |f| %>
+				<div class="form-group">
+				  <%= f.label :name %>
+				  <%= f.text_field :name, class: 'form-control' %>
+				</div>
+
+				<div class="form-group">
+				  <%= f.label :bio %>
+				  <%= f.text_area :bio, class: 'form-control' %>
+				</div>
+
+				<div class="form-group">
+				  <%= f.label :birth_date %>
+				  <%= f.date_select :birth_date, class: 'form-control' %>
+				</div>
+
+				<div class="form-group">
+				  <%= f.label :birth_place %>
+				  <%= f.text_field :birth_place, class: 'form-control' %>
+				</div>
+
+				<div class="form-group">
+				  <%= f.label :image_url %>
+				  <%= f.text_field :image_url, class: 'form-control' %>
+				</div>
+				
+				<div class="form-group">
+					<%= f.label :Alive? %>
+					<%= f.check_box :alive%>
+				</div>
+
+				<div class="form-group">
+				  <%= f.label :death_date %>
+				  <%= f.date_select :death_date, class: 'form-control' %>
+				</div>
+
+				<div class="form-group">
+				  <%= f.label :death_place %>
+				  <%= f.text_field :death_place, class: 'form-control' %>
+				</div>
+
+				<div class="actions">
+				  <%= link_to 'Cancel', actors_path, class: 'btn btn-danger' %>
+				  <%= f.submit 'Crear Acto', class: 'btn btn-success' %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
